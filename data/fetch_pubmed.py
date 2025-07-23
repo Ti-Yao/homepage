@@ -39,10 +39,12 @@ def parse_pubmed_xml(xml_data):
             article_title = article.findtext('.//ArticleTitle')
             journal = article.findtext('.//Journal/Title')
 
-            if len(article_title)< 4:
-                article_title = np.nan
-            
+            if len(article_title) < 4:
+                article_title = pd.NA  # you used np.nan, but pandas NA is cleaner in newer versions
+
             authors = []
+            affiliations = set()
+
             for author in article.findall('.//AuthorList/Author'):
                 last = author.findtext('LastName')
                 fore = author.findtext('ForeName')
@@ -50,10 +52,19 @@ def parse_pubmed_xml(xml_data):
                     authors.append(f"{last} {fore[0]}.")
                 elif last:
                     authors.append(last)
+
+                # Affiliation (can be multiple)
+                aff_list = author.findall('.//AffiliationInfo/Affiliation')
+                for aff in aff_list:
+                    if aff is not None and aff.text:
+                        affiliations.add(aff.text.strip())
+
             authors = ', '.join(authors)
+            affiliation_str = '; '.join(affiliations) if affiliations else None
 
             pub_date_elem = article.find('.//Journal/JournalIssue/PubDate')
             pub_date_str = None
+            year = None
             if pub_date_elem is not None:
                 year = pub_date_elem.findtext('Year')
                 medline_date = pub_date_elem.findtext('MedlineDate')
@@ -66,43 +77,36 @@ def parse_pubmed_xml(xml_data):
                     if day:
                         pub_date_str += f"-{day}"
                 elif medline_date:
-                    # medline_date can be a range or just a year, e.g., "1998 Jan-Feb"
                     pub_date_str = medline_date
-                else:
-                    pub_date_str = None
-            else:
-                pub_date_str = None
 
-            # Extract DOI
             doi = None
             for article_id in article.findall('.//ArticleIdList/ArticleId'):
                 if article_id.attrib.get('IdType') == 'doi':
                     doi = article_id.text
                     break
-            doc_types = [pt.text for pt in article.findall('.//PublicationTypeList/PublicationType')]
-            
+
             records.append({
                 'Title': article_title,
                 'Journal': journal,
                 'Authors': authors,
+                'Affiliations': affiliation_str,
                 'Year': year,
                 'DOI': doi,
-                'DocumentType':'Article',
-                "PublicationDate": pub_date_str
+                'DocumentType': 'Article',
+                'PublicationDate': pub_date_str
             })
         except Exception:
             continue
-    
+
     # Convert PublicationDate strings to pandas datetime, coercing errors
     for r in records:
         date_str = r['PublicationDate']
         if date_str:
-            # Normalize months like "Jan" to "01"
-            # Pandas can parse abbreviated months, so just let it try
             r['PublicationDate'] = pd.to_datetime(date_str, errors='coerce')
         else:
             r['PublicationDate'] = pd.NaT
     return records
+
 
 
 # List of authors to process
@@ -141,5 +145,14 @@ for author in authors_list:
     time.sleep(0.5)  # polite pause to avoid hitting API limits
 
 # Convert all records to a DataFrame
+
+
+
 df = pd.DataFrame(all_records).drop_duplicates('Title').sort_values('PublicationDate', ascending=False)
+# Define regex pattern for affiliation filtering
+affil_pattern = r'(?i)\b(UCL|University College London|Great Ormond Street|Royal Free|Cardiovascular Science)\b'
+
+# Keep only rows with matching affiliations
+df = df[df['Affiliations'].astype(str).str.contains(affil_pattern, na=False)]
+
 df.to_json('data/pubs.json', orient='records')
