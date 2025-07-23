@@ -1,82 +1,99 @@
-baseURL:  https://ti-yao.github.io/homepage/ #http://localhost:1313/test #
-title: "Translational Cardiac MRI Group"
-# relativeURLs: true
-
+baseURL: https://ti-yao.github.io/homepage/
+title: Translational Cardiac MRI Group
 menu:
   main:
-    - identifier: research
-      name: Research
-      url: /research/
-      weight: 10
-    - identifier: publications
-      name: Publications
-      url: /publications/
-      weight: 20
-    - identifier: people
-      name: People
-      url: /people/
-      weight: 30
-    - identifier: news
-      name: News
-      url: /news/
-      weight: 40    
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: 100
-
+  - identifier: research
+    name: Research
+    url: /research/
+    weight: 10
+  - identifier: publications
+    name: Publications
+    url: /publications/
+    weight: 20
+  - identifier: people
+    name: People
+    url: /people/
+    weight: 30
+  - identifier: news
+    name: News
+    url: /news/
+    weight: 40
+  - identifier: contact
+    name: Contact
+    url: /contact/
+    weight: 100
 params:
-  description: Developing and validating novel methods of imaging the cardiovascular system
+  description: Developing and validating novel methods of imaging the cardiovascular
+    system
   img_home: img/home/banner.jpg
   img_404: img/404.jpg
-  sponsors: [img/sponsors/ucl.png, img/sponsors/bhf.png, img/sponsors/gosh.png, img/sponsors/royalfree.png]
+  sponsors:
+  - img/sponsors/ucl.png
+  - img/sponsors/bhf.png
+  - img/sponsors/gosh.png
+  - img/sponsors/royalfree.png
   email: rmhitly@ucl.ac.uk
   social:
-    github: "mrphys"
-
-
+    github: mrphys
   highlighted_pubs:
     1:
-        title: "FReSCO: Flow Reconstruction and Segmentation for low-latency Cardiac Output monitoring using deep artifact suppression and segmentation"
-        year: 2022
-        journal: Magnetic Resonance in Medicine
-        link: https://doi.org/10.1002/mrm.29374
-        
+      title: A lumped parameter model of the coronary circulation incorporating time-varying
+        resistance, intramyocardial pressure and vascular compliance.
+      year: 2025
+      journal: Journal of biomechanics
+      link: https://doi.org/10.1016/j.jbiomech.2025.112679
     2:
-        title: Deep artifact suppression for spiral real-time phase contrast cardiac magnetic resonance imaging in congenital heart disease
-        year: 2021
-        journal: Magnetic Resonance Imaging
-        link: https://doi.org/10.1016/j.mri.2021.08.005
-        
+      title: 'Transthyretin amyloid cardiomyopathy: natural history and treatment
+        response assessed by cardiovascular magnetic resonance.'
+      year: 2025
+      journal: European heart journal
+      link: https://doi.org/10.1093/eurheartj/ehaf412
     3:
-        title: Real-time deep artifact suppression using recurrent U-Nets for low-latency cardiac MRI
-        year: 2021
-        journal: Magnetic Resonance in Medicine
-        link: https://doi.org/10.1002/mrm.28834
-        
+      title: 'Defining Diastolic Dysfunction Post-Fontan: Threshold, Risk Factors,
+        and Associations with Outcomes.'
+      year: 2025
+      journal: American heart journal
+      link: https://doi.org/10.1016/j.ahj.2025.07.007
     4:
-        title: "The role of artificial intelligence in healthcare: a structured literature review"
-        year: 2021
-        journal: BMC Medical Informatics and Decision Making
-        link: https://doi.org/10.1186/s12911-021-01488-9
-        
+      title: 'Strategies to enhance recruitment of female participants to cardiovascular
+        research: a joint British Cardiovascular Societies'' consensus document in
+        collaboration with the British Heart Foundation Clinical Research Collaborative.'
+      year: 2025
+      journal: Heart (British Cardiac Society)
+      link: https://doi.org/10.1136/heartjnl-2024-325545
     5:
-        title: Reducing contrast agent dose in cardiovascular MR angiography with deep learning
-        year: 2021
-        journal: Journal of Magnetic Resonance Imaging
-        link: https://doi.org/10.1002/jmri.27573
-        
+      title: Polyacrylamide Gel Calibration Phantoms for Quantification in Sodium
+        MRI.
+      year: 2025
+      journal: NMR in biomedicine
+      link: https://doi.org/10.1002/nbm.70056
     6:
-        title: Rapid 3D whole-heart cine imaging using golden ratio stack of spirals
-        year: 2020
-        journal: Magnetic Resonance Imaging
-        link: https://doi.org/10.1016/j.mri.2020.06.008
-        
-
+      title: Fully automated measurement of aortic pulse wave velocity from routine
+        cardiac MRI studies.
+      year: 2025
+      journal: Magnetic resonance imaging
+      link: https://doi.org/10.1016/j.mri.2025.110442
     7:
-        title: Rapid whole-heart CMR with single volume super-resolution
-        year: 2020
-        journal: Journal of Cardiovascular Magnetic Resonance
-        link: https://doi.org/10.1186/s12968-020-00651-x
-
----
+      title: Cardiopulmonary Exercise Testing With Exercise Echocardiography to Assess
+        Treatment Response in Transthyretin Amyloid Cardiomyopathy.
+      year: 2025
+      journal: JACC. Heart failure
+      link: https://doi.org/10.1016/j.jchf.2025.01.020
+    8:
+      title: Serological Responses to Target Streptococcus pyogenes Vaccine Antigens
+        in Patients With Proven Invasive β-Hemolytic Streptococcal Infections.
+      year: 2025
+      journal: The Journal of infectious diseases
+      link: https://doi.org/10.1093/infdis/jiae496
+    9:
+      title: The contribution of genetic determinants of blood gene expression and
+        splicing to molecular phenotypes and health outcomes.
+      year: 2025
+      journal: Nature genetics
+      link: https://doi.org/10.1038/s41588-025-02096-3
+    10:
+      title: 'CiFi: Accurate long-read chromatin conformation capture with low-input
+        requirements.'
+      year: 2025
+      journal: 'bioRxiv : the preprint server for biology'
+      link: https://doi.org/10.1101/2025.01.31.635566
