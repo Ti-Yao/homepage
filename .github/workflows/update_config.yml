@@ -1,11 +1,11 @@
 name: Update Config YAML
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
+  workflow_run:
+    workflows: ["Fetch PubMed Data"]
+    types:
+      - completed
+  workflow_dispatch:   # optional manual trigger
 jobs:
   update-config:
     runs-on: ubuntu-latest
