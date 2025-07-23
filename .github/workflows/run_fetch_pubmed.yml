@@ -1,6 +1,10 @@
 name: Fetch PubMed Data
 
 on:
+  workflow_run:
+    workflows: ["Update Config YAML"]
+    types:
+      - completed
   schedule:
     - cron: '0 0 * * 0'  # Every Sunday
   push:
