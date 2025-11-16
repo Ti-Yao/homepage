@@ -55,47 +55,46 @@ params:
       journal: JACC. Advances
       link: https://doi.org/10.1016/j.jacadv.2025.102094
     4:
+      title: 'Strategies to enhance recruitment of female participants to cardiovascular
+        research: a joint British Cardiovascular Societies'' consensus document in
+        collaboration with the British Heart Foundation Clinical Research Collaborative.'
+      year: 2025
+      journal: Heart (British Cardiac Society)
+      link: https://doi.org/10.1136/heartjnl-2024-325545
+    5:
       title: A lumped parameter model of the coronary circulation incorporating time-varying
         resistance, intramyocardial pressure and vascular compliance.
       year: 2025
       journal: Journal of biomechanics
       link: https://doi.org/10.1016/j.jbiomech.2025.112679
-    5:
+    6:
       title: 'Transthyretin amyloid cardiomyopathy: natural history and treatment
         response assessed by cardiovascular magnetic resonance.'
       year: 2025
       journal: European heart journal
       link: https://doi.org/10.1093/eurheartj/ehaf412
-    6:
+    7:
+      title: Polyacrylamide Gel Calibration Phantoms for Quantification in Sodium
+        MRI.
+      year: 2025
+      journal: NMR in biomedicine
+      link: https://doi.org/10.1002/nbm.70056
+    8:
       title: Cardiopulmonary Exercise Testing With Exercise Echocardiography to Assess
         Treatment Response in Transthyretin Amyloid Cardiomyopathy.
       year: 2025
       journal: JACC. Heart failure
       link: https://doi.org/10.1016/j.jchf.2025.01.020
-    7:
+    9:
       title: 'Predicting Peri-Operative Cardiorespiratory Adverse Events in Children
         with Idiopathic Pulmonary Arterial Hypertension Undergoing Cardiac Catheterization
         Using Echocardiography: A Cohort Study.'
       year: 2025
       journal: Pediatric cardiology
       link: https://doi.org/10.1007/s00246-024-03447-3
-    8:
+    10:
       title: A machine learning algorithm for creating isotropic 3D aortic segmentations
         from routine cardiac MR localizers.
       year: 2025
       journal: Magnetic resonance imaging
       link: https://doi.org/10.1016/j.mri.2024.110253
-    9:
-      title: Cardiac MRI Predictors of Arrhythmic Sudden Cardiac Events in Patients
-        With Fontan Circulation.
-      year: 2024
-      journal: Journal of the American College of Cardiology
-      link: https://doi.org/10.1016/j.jacc.2024.08.063
-    10:
-      title: 'Clinical impact of novel cardiovascular magnetic resonance technology
-        on patients with congenital heart disease: a scientific statement of the Association
-        for European Pediatric and Congenital Cardiology and the European Association
-        of Cardiovascular Imaging of the European Society of Cardiology.'
-      year: 2024
-      journal: European heart journal. Cardiovascular Imaging
-      link: https://doi.org/10.1093/ehjci/jeae172
